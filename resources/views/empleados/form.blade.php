@@ -15,13 +15,13 @@
     <div class="col-sm-1">
         <div class="form-check">
             <label class="col-form-label" for="masculino">
-                <input class="form-check-input" type="radio" name="sexo" id="masculino" value="M" {{($empleado->sexo == 'M' ? 'checked' : '')}}>
+                <input class="form-check-input" type="radio" name="sexo" id="masculino" value="M" {{(($empleado != null) ? ($empleado->sexo == 'M' ? 'checked' : '') : '')}}>
                 Masculino
             </label>
           </div>
           <div class="form-check">
             <label class="col-form-label" for="femenino">
-                <input class="form-check-input" type="radio" name="sexo" id="femenino" value="F" {{($empleado->sexo == 'F' ? 'checked' : '')}}>
+                <input class="form-check-input" type="radio" name="sexo" id="femenino" value="F" {{(($empleado) ? ($empleado->sexo == 'F' ? 'checked' : '') : '')}}>
                 Femenino
             </label>
           </div>
@@ -49,7 +49,7 @@
     <div class="col-sm-3" style="padding-left: 0em;">
         <div class="form-check" style="padding-left: 0em">
             <label class="col-form-label" for="boletin">
-                <input class="form-check-input" type="checkbox" name="boletin" id="boletin" {{($empleado->boletin == '1' ? 'checked' : '')}}>
+                <input class="form-check-input" type="checkbox" name="boletin" id="boletin" {{($empleado) ? ($empleado->boletin == '1' ? 'checked' : '') : ''}}>
                 Deseo recibir boletín informativo
             </label>
         </div>

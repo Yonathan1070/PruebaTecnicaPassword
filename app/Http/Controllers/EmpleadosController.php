@@ -31,7 +31,8 @@ class EmpleadosController extends Controller
     {
         $areas = Areas::get();
         $roles = Roles::get();
-        return view('empleados.crear', compact('areas', 'roles'));
+        $empleado = null;
+        return view('empleados.crear', compact('areas', 'roles', 'empleado'));
     }
 
     /**
