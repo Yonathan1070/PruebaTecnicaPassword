@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmpleadosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => '/'], function () {
+    Route::get('', [EmpleadosController::class, 'listar'])->name('listar.empleados');
+    Route::get('/crear', [EmpleadosController::class, 'crear'])->name('crear.empleado');
+    Route::post('/crear', [EmpleadosController::class, 'guardar'])->name('guardar.empleado');
+    Route::get('/editar/{id}', [EmpleadosController::class, 'editar'])->name('editar.empleado');
+    Route::put('/editar/{id}', [EmpleadosController::class, 'actualizar'])->name('actualizar.empleado');
+    Route::delete('/eliminar/{id}', [EmpleadosController::class, 'eliminar'])->name('eliminar.empleado');
 });

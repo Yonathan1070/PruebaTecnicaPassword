@@ -15,4 +15,9 @@ class Areas extends Model
     ];
     protected $guarded = ['id'];
     public $timestamps = false;
+
+    public function empleado()
+    {
+        return $this->belongsTo(Empleados::class);
+    }
 }

@@ -23,7 +23,7 @@ class Empleados extends Model
 
     public function roles()
     {
-        return $this->belongsToMany(Roles::class);
+        return $this->belongsToMany(Roles::class, 'empleado_rol', 'empleado_id', 'rol_id');
     }
 
     public function area()

@@ -15,4 +15,9 @@ class Roles extends Model
     ];
     protected $guarded = ['id'];
     public $timestamps = false;
+
+    public function empleados()
+    {
+        return $this->belongsToMany(Empleados::class, 'empleado_rol', 'rol_id', 'empleado_id');
+    }
 }
